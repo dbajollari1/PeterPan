@@ -1,0 +1,2 @@
+1. startup.sh is required since app.py is not in root folder: gunicorn --bind=0.0.0.0 --timeout 600 --chdir peterpan app:app
+   you can enter the same under configuration in azure in command line

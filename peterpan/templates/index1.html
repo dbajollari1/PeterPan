@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card-columns pt-3">
+
+  <div class="card">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="3000">
+          <img src="/static/images/carousel/Fgallery1-1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <img src="/static/images/carousel/Fgallery1-2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <img src="/static/images/carousel/Fgallery1-3.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <img src="/static/images/carousel/Fgallery1-4.png" class="d-block w-100" alt="...">
+        </div>
+        
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+ 
+  <div class="card" style="height: 0;">
+    <div class="jumbotron">
+      <h1 class="display-6">Decentralized Crowdfunding Platform</h1>
+      <p class="lead">Peterpan is where smart founders and inovation seekers get together to create a decentralized autonomous organization</p>
+      <hr class="my-4">
+    
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
