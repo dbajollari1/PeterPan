@@ -49,7 +49,7 @@ body {
   padding: 5px;
 }
 
-.event-item {
+.campaign-item {
   padding: 20px;
   width: 100%;
   margin: 15px;
@@ -58,13 +58,13 @@ body {
   box-shadow: 2px 2px #b3e6b3;
 }
 
-.event-title {
+.campaign-title {
   font-weight: bold;
   font-size: 1.5rem;
   color: darkolivegreen;
 }
 
-.event-detail {
+.campaign-detail {
   padding-top: 5px;
 }
 

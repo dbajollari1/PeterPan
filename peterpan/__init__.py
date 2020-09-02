@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from peterpan.config import Config
 import logging
 import logging.handlers
-from peterpan.dataaccess.homeDAO import getUpcomingEvent
-from peterpan.events.models import Event
+from peterpan.dataaccess.homeDAO import getUpcomingCampaign
+from peterpan.campaigns.models import Campaign
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from peterpan.services.mail_api import send_email
@@ -32,8 +32,8 @@ def create_app():
     from peterpan.public import bp as public_bp
     app.register_blueprint(public_bp)
 
-    from peterpan.events import bpEvents as events_bp
-    app.register_blueprint(events_bp)
+    from peterpan.campaigns import bpCampaigns as campaigns_bp
+    app.register_blueprint(campaigns_bp)
 
     #setup logger
     app.logger = logging.getLogger(__name__)

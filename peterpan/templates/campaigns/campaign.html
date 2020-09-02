@@ -3,17 +3,17 @@
 <script type="text/javascript">
   $(document).ready(function () {
     //alert('Hello');
-    $("#eventDate").datepicker();  //fired based on control id (#) instead of classname (.)
+    $("#campaignDate").datepicker();  //fired based on control id (#) instead of classname (.)
   });
 </script>
 
-{{ page_title('Event') }}
+{{ page_title('Campaign') }}
 
 <div class="row">
   <div class="col-lg-12">
-    <form method="POST" role="form" action="event">
+    <form method="POST" role="form" action="campaign">
       {{ form.csrf }}
-      {{ form.eventID }}
+      {{ form.campaignID }}
 
       {% if form.errors %}
       <div class="alert alert-warning" style="color:red;">
@@ -28,25 +28,25 @@
       {% endif %}
 
       <div class="form-group row">
-        <label for="eventTitle" class="col-lg-2 col-form-label">{{
-            form.eventTitle.label
+        <label for="campaignTitle" class="col-lg-2 col-form-label">{{
+            form.campaignTitle.label
           }}</label>
         <div class="col-lg-8">
-          <input type="text" class="form-control" id="eventTitle" name="eventTitle" value="{{ form.eventTitle.data }}"
-            placeholder="Event Title" autocomplete="off" required />
+          <input type="text" class="form-control" id="campaignTitle" name="campaignTitle" value="{{ form.campaignTitle.data }}"
+            placeholder="Campaign Title" autocomplete="off" required />
         </div>
       </div>
 
       <div class="form-group row">
 
-        <label for="eventDate" class="col-lg-2 col-form-label">{{ form.eventDate.label }}</label>
+        <label for="campaignDate" class="col-lg-2 col-form-label">{{ form.campaignDate.label }}</label>
         <div class="input-group col-lg-3">
 
-          <input type="text" class="form-control" id="eventDate" name="eventDate" value="{{ form.eventDate.data }}"
-            style="max-width: 120px;" placeholder="Event Date" autocomplete="off" required />
+          <input type="text" class="form-control" id="campaignDate" name="campaignDate" value="{{ form.campaignDate.data }}"
+            style="max-width: 120px;" placeholder="Campaign Date" autocomplete="off" required />
           <!--class="dtpick hasDatepicker" -->
           <span class="input-group-append">
-            <label class="btn btn-outline-secondary" for="eventDate">
+            <label class="btn btn-outline-secondary" for="campaignDate">
               <span class="fa fa-calendar"></span>
             </label>
           </span>
@@ -60,23 +60,23 @@
       </div>
 
       <div class="form-group row">
-        <label for="eventLocation" class="col-lg-2 col-form-label">{{ form.eventLocation.label }}</label>
+        <label for="campaignLocation" class="col-lg-2 col-form-label">{{ form.campaignLocation.label }}</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" id="eventLocation" name="eventLocation"
-            value="{{ form.eventLocation.data }}" placeholder="Event Location" autocomplete="off" required />
+          <input type="text" class="form-control" id="campaignLocation" name="campaignLocation"
+            value="{{ form.campaignLocation.data }}" placeholder="Campaign Location" autocomplete="off" required />
         </div>
       </div>
       <div class="form-group row">
-        <label for="eventDesc" class="col-lg-2 col-form-label">{{ form.eventDesc.label }}</label>
+        <label for="campaignDesc" class="col-lg-2 col-form-label">{{ form.campaignDesc.label }}</label>
         <div class="col-lg-10">
-          <textarea id="eventDesc" name="eventDesc" placeholder="Event Description" class="form-control" rows="3"
-            required>{{ form.eventDesc.data }}</textarea>
+          <textarea id="campaignDesc" name="campaignDesc" placeholder="Campaign Description" class="form-control" rows="3"
+            required>{{ form.campaignDesc.data }}</textarea>
         </div>
       </div>
       <div class="form-group row">
         <div class="col-lg-12 text-right">
           <button type="submit" class="btn btn-primary">Save</button>
-          <a href="/events" class="btn btn-primary">Cancel</a>
+          <a href="/campaigns" class="btn btn-primary">Cancel</a>
         </div>
       </div>
     </form>

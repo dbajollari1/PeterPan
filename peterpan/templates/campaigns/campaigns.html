@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<script type="text/javascript">
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this campaign?');
+    }
+</script>
+
+{{ page_title('Campaigns', '/campaign/0', 'Create New Campaign') }}
+
+
+{% for campaign in campaignList %}
+<div class="row">
+        <div class="card mb-3" style="width: 100%;">
+        <div class="card-body">
+            <h5 class="card-title">
+                {{ campaign.campaignTitle }}
+                {% if current_user.is_authenticated and current_user.userRole == 'A' %}
+                <div style="float: right;font-weight:normal;font-size: 1rem;">
+                    <a href={{ url_for('campaigns.campaign', campaign_id = campaign.campaignId) }} role="button">
+                        Update
+                    </a> |
+                    <a onclick="return confirmDelete();" href={{ url_for('campaigns.removeCampaign', campaign_id = campaign.campaignId) }}
+                        role="button">
+                        Delete
+                    </a>
+                </div>
+                {% endif %} 
+            </h5>
+            <div class="campaign-detail" style="padding-top: 15px;"><span class="label">Date:</span>{{ campaign.campaignDate }}
+            </div>
+            <div class="campaign-detail"><span class="label">Time:</span> {{ campaign.startTime }} - {{ campaign.endTime }} </div>
+            <div class="campaign-detail"><span class="label">Location:</span> {{ campaign.campaignLocation }}</div>
+            <div class="campaign-detail"><span class="label"
+                    style="display: inline-block;padding-bottom:10px;">Details:</span><br>
+                {% for line in campaign.campaignDesc %}
+                {{line | safe }}<br>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}

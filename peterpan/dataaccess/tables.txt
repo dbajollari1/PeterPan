@@ -1,11 +1,11 @@
-1. Event
+1. Campaign
 -------------
-CREATE TABLE IF NOT EXISTS "event" (
+CREATE TABLE IF NOT EXISTS "campaign" (
 "id" INTEGER PRIMARY KEY AUTOINCREMENT,
 "title" VARCHAR,
 "description" TEXT,
 "location" VARCHAR,
-"eventDate" DATE,
+"campaignDate" DATE,
 "startTime" VARCHAR,
 "endTime" VARCHAR,
 "status" VARCHAR,
@@ -13,14 +13,14 @@ CREATE TABLE IF NOT EXISTS "event" (
 "createdOn" DATETIME
 );
 
-1. Event
+1. Campaign
 -------------
-CREATE TABLE IF NOT EXISTS "event" (
+CREATE TABLE IF NOT EXISTS "campaign" (
 "id" INTEGER PRIMARY KEY AUTOINCREMENT,
 "title" VARCHAR,
 "description" TEXT,
 "location" TEXT,
-"eventdate" DATETIME,
+"campaigndate" DATETIME,
 "status" VARCHAR,
 "createdby" VARCHAR,
 "createdon" DATETIME

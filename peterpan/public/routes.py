@@ -7,7 +7,7 @@ from flask import current_app as app
 
 @bp.route('/about')
 def about():
-    return render_template('public/about.html')
+    return render_template('public/whatwedo.html')
 
     
 @bp.route('/contact', methods=('GET', 'POST'))

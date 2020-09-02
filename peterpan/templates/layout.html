@@ -31,7 +31,7 @@
 
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" style="color:#740303ce; font-weight:bold; font-size:2em;"  href="#">PeterPan</a>
+      <a class="navbar-brand" style="color:#f121a1d8; font-weight:bold; font-size:2.5em;"  href="/">PeterPan</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="my-1 mx-2 close">X</span>
         <span class="navbar-toggler-icon"></span>
@@ -39,9 +39,9 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
 
-          {{ nav_link('home', 'What We Do') }}
-          {{ nav_link('events.events', 'Explore') }}
-          {{ nav_link('public.about', 'Start a Campaign') }}
+          {{ nav_link('public.about', 'What We Do') }}
+          {{ nav_link('campaigns.campaigns', 'Explore') }}
+          {{ nav_link('campaigns.campaign', 'Start a Campaign') }}
           {{ nav_link('public.contact', 'Contact Us') }}
 
           {% if current_user.is_authenticated %}
@@ -53,16 +53,13 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" style="padding:10px;" href="{{ url_for('auth.profile', user_id=0) }}"><i class="fa fa-user-o"></i>&nbsp;&nbsp;My
                 Profile</a>
-              <a class="dropdown-item" style="padding:10px;" href="{{ url_for('gallery.gallery', filter='U') }}"><i
-                  class="fa fa-picture-o"></i>&nbsp;&nbsp;My
-                Gallery</a>
+              <a class="dropdown-item" style="padding:10px;" href="{{ url_for('campaigns.campaigns', filter='U') }}"><i
+                  class="fa fa-picture-o"></i>&nbsp;&nbsp;
+                My Campaigns</a>
               {% if current_user.userRole == 'A' %}
               <a class="dropdown-item" style="padding:10px;" href="{{ url_for('auth.users') }}"><i
                   class="fa fa-users"></i>&nbsp;&nbsp;
                 Users</a>
-                <a class="dropdown-item" style="padding:10px;" href="{{ url_for('sitecontent.sitecontents') }}"><i
-                  class="fa fa-users"></i>&nbsp;&nbsp;
-                Site Content</a>
               {% endif %}
               <hr style="margin-bottom: 0px;margin-top: 0px;">
               <a class="dropdown-item" style="padding:10px;" href="{{ url_for('auth.logout') }}"><i
